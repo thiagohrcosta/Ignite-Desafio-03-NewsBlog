@@ -6,9 +6,14 @@ import Head from 'next/head';
 import Prismic from '@prismicio/client';
 import Link from 'next/link';
 import { FiCalendar, FiUser } from 'react-icons/fi';
+
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
 import { getPrismicClient } from '../services/prismic';
 
 import styles from './home.module.scss';
+import { formatDate } from '../helpers/date';
 
 interface Post {
   uid?: string;
@@ -60,8 +65,7 @@ const Home = ({ postsPagination }: HomeProps) => {
         <title>Home | News Challenge</title>
       </Head>
       <header className={styles.headerContainer}>
-        {/* <img src="" alt="logo" /> */}
-        <h1>Teste</h1>
+        <img src="/images/logo.svg" alt="logo" />
       </header>
       <main className={styles.container}>
         <div className={styles.postList}>
@@ -73,7 +77,7 @@ const Home = ({ postsPagination }: HomeProps) => {
                 <div className={styles.infos}>
                   <div>
                     <FiCalendar />
-                    {/* <time>{formatDate(post.first_publication_date)}</time> */}
+                    <time>{formatDate(post.first_publication_date)}</time>
                   </div>
                   <div>
                     <FiUser />
@@ -105,8 +109,9 @@ export const getStaticProps: GetStaticProps = async () => {
         'publication.title',
         'publication.subtitle',
         'publication.author',
+        'publication.first_publication_date',
       ],
-      pageSize: 5,
+      pageSize: 2,
     }
   );
 
