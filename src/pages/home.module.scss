@@ -1,1 +1,56 @@
 // TODO
+.headerContainer {
+  width: 1280px;
+  margin: 100px auto;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+
+  a {
+    strong {
+      color: var(--color-white-100);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 34px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      margin-top: 8px;
+    }
+
+  }
+
+  .infos {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 48px;
+    font-size: 14px;
+
+    time {
+      margin-left: 8px
+    }
+
+
+    div:nth-child(2) {
+      margin-left: 24px
+    }
+  }
+}
+
+.postList {
+  button {
+    background-color: var(--color-gray-700);
+    color: var(--color-pink-500);
+
+    font-weight: 700;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 22px;
+
+    border: none;
+  }
+}
