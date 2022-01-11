@@ -62,7 +62,7 @@ const Home = ({ postsPagination }: HomeProps) => {
   return (
     <>
       <Head>
-        <title>Home | News Challenge</title>
+        <title>Home | Space Traveling</title>
       </Head>
       <header className={styles.headerContainer}>
         <img src="/images/logo.svg" alt="logo" />
