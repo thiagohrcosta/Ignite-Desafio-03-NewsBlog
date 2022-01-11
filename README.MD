@@ -41,6 +41,8 @@ Neste desafio foi exigido o desenvolvimento de um blog totalmente do zero utiliz
     return prismic;
     }
 
+  ## Nota final
+  ![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1641944065/avaliacao_erhasa.png)
 
 ## Como rodar a aplicação?
 
