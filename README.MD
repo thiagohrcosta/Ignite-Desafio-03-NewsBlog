@@ -26,7 +26,7 @@ Neste desafio foi exigido o desenvolvimento de um blog totalmente do zero utiliz
 	- Cada publicação deve indicar a data em que foi publicada, nome do autor e calcular o tempo médio de leitura;
 	- É necessário ainda, retornar todo o conteúdo da publicação.
 
-![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1641942985/space_gyq8d0.gif)
+![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1641943495/eat2_oupfka.png)
 
 ## Como rodar a aplicação?
 
