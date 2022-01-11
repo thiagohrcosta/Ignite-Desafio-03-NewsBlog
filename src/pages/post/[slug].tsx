@@ -5,6 +5,9 @@ import Head from 'next/head';
 import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
 import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
 
@@ -13,6 +16,7 @@ import { getPrismicClient } from '../../services/prismic';
 import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
 import Header from '../../components/Header';
+import { useRouter } from 'next/router';
 
 
 interface Post {
@@ -36,7 +40,23 @@ interface PostProps {
   post: Post;
 }
 
+
+
 export default function Post({ post }: PostProps) {
+  const router = useRouter();
+  if (router.isFallback){
+    return <h1>Carregando...</h1>;
+  }
+
+  const totalWords = post.data.content.reduce((total, contentItem) => {
+    total += contentItem.heading.split(' ').length;
+
+    const words = contentItem.body.map(item => item.text.split(' ').length);
+    words.map(word => total += word);
+    return total;
+  }, 0);
+  const readTime = Math.ceil(totalWords / 200);
+
   return (
     <>
       <Head>
@@ -54,7 +74,12 @@ export default function Post({ post }: PostProps) {
         <div className={styles.authorInfo}>
           <div className={styles.authorContainer}>
             <AiOutlineCalendar />
-            <p>11 jan 2021</p>
+            <p>
+              {
+                format(new Date(post.first_publication_date),
+                'dd MMM yyyy', { locale: ptBR }
+              )}
+            </p>
           </div>
           <div className={styles.authorContainer}>
             <BsPerson />
@@ -62,7 +87,7 @@ export default function Post({ post }: PostProps) {
           </div>
           <div className={styles.authorContainer}>
             <AiOutlineClockCircle />
-            <p>5min</p>
+            <p>{readTime} min</p>
           </div>
         </div>
       </div>
