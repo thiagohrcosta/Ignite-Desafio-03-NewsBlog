@@ -1,1 +1,59 @@
 // TODO
+
+// @media (max-width: 1294px){
+//   .postContent {
+//     max-width: 720px;
+//     margin: 0 auto;
+//   }
+// }
+
+
+.banner {
+  img {
+    height: 400px;
+    width: 100%;
+  }
+}
+
+.headerContainer{
+  width: 1280px;
+  margin: 80px auto;
+
+  h1 {
+    color: var(--color-white-100);
+    font-size: 48px;
+    font-weight: 700;
+  }
+}
+
+.authorInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 357px;
+}
+
+.authorContainer {
+  display: flex;
+  margin: 24px 0 0;
+
+  p {
+    margin-left: 8px;
+  }
+}
+
+.postContent {
+  width: 1280px;
+  margin: 0 auto 80px;
+  line-height: 25px;
+
+  h2 {
+    color: var(--color-white-100);
+    font-size: 36px;
+    font-weight: 700;
+    margin: 32px 0;
+  }
+
+  p {
+    margin: 24px 0;
+  }
+}
