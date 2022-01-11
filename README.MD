@@ -26,7 +26,21 @@ Neste desafio foi exigido o desenvolvimento de um blog totalmente do zero utiliz
 	- Cada publicação deve indicar a data em que foi publicada, nome do autor e calcular o tempo médio de leitura;
 	- É necessário ainda, retornar todo o conteúdo da publicação.
 
-![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1641943495/eat2_oupfka.png)
+![enter image description here](https://res.cloudinary.com/dloadb2bx/image/upload/v1641942985/space_gyq8d0.gif)
+
+## Conexão com o Prismic
+
+    services > prismic.ts
+
+    import Prismic from  '@prismicio/client';
+    import { DefaultClient } from  '@prismicio/client/types/client';
+
+    export  function  getPrismicClient(req?:  unknown):  DefaultClient {
+    const prismic = Prismic.client(process.env.PRISMIC_API_ENDPOINT, { req, accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+    });
+    return prismic;
+    }
+
 
 ## Como rodar a aplicação?
 
